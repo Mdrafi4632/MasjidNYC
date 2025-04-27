@@ -1,2 +1,462 @@
-main {
+<img
+  src="/transparent-logo.png"
+  alt="Masjid NYC Logo"
+  style={{
+    width: "160px",
+    filter: "brightness(0) invert(1)"
+  }}
+/>
+
+body {
+  background-color: #f7f4ef;
+}
+
+* {
+  font-family: 'DM Sans', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
+  flex-direction: column;
+  text-align: center;
+}
+
+.masjid-logo {
+  width: 400px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.home-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.welcome-banner {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.search-bar {
+  width: 600px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin: 1rem auto;
+  display: block;
+}
+
+.borough-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.borough-button {
+  padding: 0.5rem 1rem;
+  background-color: #004b6e;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.borough-button:hover {
+  background-color: #006d9c;
+}
+
+.post-feed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+
+.post-card {
+  background: white;
+  padding: 1.5rem; /* slightly less padding */
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px; /* balanced width */
+  min-height: auto; /* no fixed height */
+  margin: 1rem;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center the content vertically */
+  gap: 0.5rem; /* small space between items */
+}
+
+
+.post-card:hover {
+  transform: translateY(-8px);
+}
+
+.masjid-name {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #2d2d2d;
+}
+
+.upvotes {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.review {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.tags {
+  margin-top: 0.5rem;
+}
+
+.tag {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  padding: 0.25rem 0.6rem;
+  margin-right: 0.5rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.map-preview iframe {
+  border-radius: 12px;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.add-button {
+  background-color: #004b6e;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.add-button:hover {
+  background-color: #006d9c;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.post-form input,
+.post-form textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.post-form button {
+  background-color: #004b6e;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.post-form button:hover {
+  background-color: #006d9c;
+}
+
+.rating-box {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+}
+
+.rating-box label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: #6c757d; /* exact placeholder gray */
+}
+
+.rating-stars {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.star {
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.remove-button {
+  background-color: #b00020;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.remove-button:hover {
+  background-color: #c62828;
+}
+
+.tag-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem; /* adds space between buttons */
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag-button {
+  background-color: #004b6e;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.tag-button.selected {
+  background-color: #006d9c;
+}
+
+.creation-time {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 0.3rem;
+}
+
+.upvote-button {
+  margin-top: 0.3rem;
+  background-color: #ffe138;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.upvote-button:hover {
+  background-color: #ffc107;
+}
+
+.borough-select {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  appearance: none;
+}
+
+.masjid-borough {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0.3rem;
+}
+
+.borough-button.selected {
+  border: 2px solid #000;
+  background-color: #005073;
+  color: white;
+}
+.clear-button {
+  background-color: #ffcccc;
+  color: black;
+}
+
+.close-button {
+  margin-top: 1rem;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #c9302c;
+}
+
+.masjid-details-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.details-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.details-description {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.details-info p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.details-tags {
+  margin-top: 1rem;
+}
+
+.details-tag {
+  display: inline-block;
+  background: #e0f0ff;
+  color: #0077b6;
+  padding: 6px 12px;
+  border-radius: 16px;
+  margin: 4px;
+  font-size: 0.9rem;
+}
+
+.details-close-button {
+  margin-top: 1.5rem;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.details-close-button:hover {
+  background-color: #e04343;
+}
+
+.masjid-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.masjid-name {
+  margin: 0;
+}
+
+.rating {
+  font-size: 1.2rem;
+  margin-top: 0.1rem;
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 1rem;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 2.5rem;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.clear-search {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.borough-select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  margin-bottom: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: none; /* << THIS removes the dark inner shadow */
+}
+
+.details-close-button {
+  background-color: #ff5c5c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.details-close-button:hover {
+  background-color: #e04b4b;
 }
